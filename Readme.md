@@ -1,6 +1,6 @@
-# ExpenseHive –  MERN Expense Tracker
+# ExpenseHive – Modern Expense Tracker
 
-A modern, animated and user-friendly expense tracker built with the MERN stack. Track your income and expenses, analyze financial habits, and visualize your spending through interactive reports — all in a dark-themed, beautifully designed web app.
+A full-stack expense tracking application built with the MERN stack. Track your income and expenses, analyze financial habits, and visualize your spending through interactive reports with a beautiful, responsive interface.
 
 ---
 
@@ -45,144 +45,176 @@ A modern, animated and user-friendly expense tracker built with the MERN stack. 
 
 ### Installation
 
+1. **Clone the repository:**
+```bash
+git clone https://github.com/sayan4312/ExpenseHive.git
+cd ExpenseHive
+```
 
-git clone https://github.com/yourusername/expense-hive.git
-cd expense-hive
-
-Install dependencies:
-
-Copy
-Edit
+2. **Install backend dependencies:**
+```bash
 cd backend
 npm install
-cd ../frontend
+```
+
+3. **Install frontend dependencies:**
+```bash
+cd project
 npm install
+```
 
+4. **Environment Variables:**
 
-Environment Variables :
-
-Create a .env file in /backend:
-
-
-Copy
-Edit
+Create a `.env` file in the `/backend` directory:
+```env
 PORT=4000
 MONGODB_URI=mongodb://localhost:27017/expense-hive
-JWT_SECRET=your_jwt_secret
+JWT_SECRET=your_jwt_secret_key_here
+```
 
+### 🏃‍♂️ Running the Application
 
-▶️ Running the App:
-
-Backend :-
-
-bash
-Copy
-Edit
+1. **Start the backend server:**
+```bash
 cd backend
-node server
+npm start
+```
 
-Frontend :-
-bash
-Copy
-Edit
-cd frontend
+2. **Start the frontend development server:**
+```bash
+cd project
 npm run dev
+```
 
-Visit the app at: http://localhost:5173
+3. **Visit the application:**
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:4000
 
-🗂 Project Structure
-pgsql
-Copy
-Edit
+---
 
-expense-hive/
+## � Project Structure
+
+## 📁 Project Structure
+
+```
+ExpenseHive/
 ├── backend/
-│   ├── controllers/
-│   ├── routes/
+│   ├── config/
+│   │   └── mongodb.js
+│   ├── controller/
+│   │   ├── transactioncontroller.js
+│   │   └── usercontroller.js
 │   ├── middlewares/
+│   │   └── authmiddleware.js
 │   ├── models/
+│   │   ├── transaction.js
+│   │   └── users.js
+│   ├── routes/
+│   │   ├── transactionroutes.js
+│   │   └── userroutes.js
+│   ├── package.json
 │   └── server.js
-├── frontend/
-│   ├── context/
-│   ├── components/
-│   ├── pages/
-│   ├── types/
-│   ├── utils/
-│   └── App.tsx
+├── project/
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── logo.png
+│   │   ├── components/
+│   │   │   ├── Chart.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── SummaryCard.tsx
+│   │   │   ├── TransactionForm.tsx
+│   │   │   └── TransactionList.tsx
+│   │   ├── context/
+│   │   │   ├── AuthContext.tsx
+│   │   │   └── TransactionContext.tsx
+│   │   ├── pages/
+│   │   │   ├── Dashboard.tsx
+│   │   │   ├── Login.tsx
+│   │   │   ├── Register.tsx
+│   │   │   └── Reports.tsx
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   ├── utils/
+│   │   │   ├── storage.ts
+│   │   │   └── validation.ts
+│   │   ├── App.tsx
+│   │   └── main.tsx
+│   ├── package.json
+│   └── vite.config.ts
 └── README.md
-📡 API Routes:-
+```
+## 📡 API Routes
 
-POST /api/users/register — Register new user
+### Authentication
+- `POST /api/users/register` — Register new user
+- `POST /api/users/login` — User login
+- `POST /api/users/logout` — User logout
 
-POST /api/users/login — Login
+### Transactions
+- `GET /api/transactions` — Get all user transactions
+- `POST /api/transactions` — Add a new transaction
+- `PUT /api/transactions/:id` — Edit transaction
+- `DELETE /api/transactions/:id` — Delete transaction
 
-GET /api/users/logout — Logout
+## 📊 Features & Analytics
 
-Transactions:-
+### Charts & Visualization
+- **Pie Chart**: Expense distribution by category
+- **Bar Chart**: Income vs Expenses comparison
+- **Interactive Reports**: Filter by date range and categories
 
-GET /api/transactions — Get all user transactions
+### Statistics Summary
+- Total transactions count
+- Average transaction amount
+- Most frequently used category
+- Monthly spending trends
 
-POST /api/transactions — Add a new transaction
+### Import/Export Functionality
+- ✅ Import transactions from CSV files
+- ✅ Export transaction data to CSV format
+- ✅ Data backup and migration support
 
-PUT /api/transactions/:id — Edit transaction
+## 🎨 UI/UX Features
 
-DELETE /api/transactions/:id — Delete transaction
-
-📊 Reports & Charts:-
-
-Pie Chart: Expense distribution by category
-
-Bar Chart: Income vs Expenses
-
-Stats Summary:
-
-Total transactions
-
-Average amount
-
-Most used category
-
-📦 Import/Export
-✅ Import .csv transaction files
-
-✅ Export your data to CSV for backups or spreadsheets
-
-🎨 UI Highlights
-Tailwind-powered dark/light theme
-
-Framer Motion animations
-
-Gradient buttons and hover effects
-
-Curved logo integrated in navbar
+- **Modern Design**: Tailwind CSS with glassmorphic effects
+- **Theme Support**: Light/Dark mode toggle with persistent storage
+- **Responsive Layout**: Mobile-first design approach
+- **Smooth Animations**: Enhanced user interactions
+- **Custom Logo**: Integrated branding in navigation
+- **Accessibility**: WCAG compliant interface elements
 
 
-✅ TODO Checklist:-
+## ✅ Development Status
 
- User auth
+- [x] User authentication system
+- [x] CRUD operations for transactions
+- [x] JWT + cookie-based security
+- [x] Import/export CSV support
+- [x] Visual analytics and charts
+- [x] Dark/light theme toggle
+- [x] Theme persistence
+- [x] Mobile responsiveness
+- [x] TypeScript integration
+- [x] React Context for state management
 
- CRUD for transactions
+## 🤝 Contributing
 
- JWT + cookie security
+Contributions are welcome! Please follow these steps:
 
- Import/export support
+1. **Fork the project**
+2. **Create your feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit your changes**: `git commit -m 'Add some amazing feature'`
+4. **Push to the branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
 
- Visual analytics
+## 📄 License
 
- Dark/light mode toggle
+This project is licensed under the MIT License.
 
- Theme persistence
+## 👨‍💻 Author
 
- Mobile responsiveness
+**Sayan** - [GitHub Profile](https://github.com/sayan4312)
 
-🤝 Contributing:-
+---
 
-Fork the project
-
-Create your feature branch: git checkout -b feat/feature-name
-
-Commit your changes: git commit -m "Add something cool"
-
-Push to the branch: git push origin feat/feature-name
-
-Open a Pull Request
+⭐ If you found this project helpful, please give it a star on GitHub!
